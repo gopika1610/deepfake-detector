@@ -1,4 +1,4 @@
-<!-- # 🛡️ DeepGuard - AI Deepfake Detection System
+# 🛡️ DeepGuard - AI Deepfake Detection System
 
 ## 👥 Project Information
 
