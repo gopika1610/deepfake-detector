@@ -1,4 +1,17 @@
-# 🛡️ DeepGuard - AI Deepfake Detection System
+<!-- # 🛡️ DeepGuard - AI Deepfake Detection System
+
+## 👥 Project Information
+
+This repository showcases our **Final Year B.Tech Team Project** developed as part of the academic curriculum.
+
+### My Contribution
+- Frontend integration
+- FastAPI API integration
+- Testing and debugging
+- Deployment support
+- Documentation
+
+> **Note:** This repository is maintained to showcase my contributions to our final-year academic project.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python">
@@ -7,207 +20,212 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
 </p>
 
-**DeepGuard** is a comprehensive AI-powered deepfake detection system that analyzes videos and audio files to identify synthetic media manipulation. Using CNN-based visual analysis, spectral audio processing, and 468-point face landmark tracking, it provides multi-modal detection with high accuracy.
+DeepGuard is an AI-powered application that analyzes video and audio files to detect potential deepfake content. The project combines computer vision, facial landmark analysis, and audio feature extraction to provide an authenticity assessment.
 
-![DeepGuard Screenshot](frontend/assets/screenshot.png)
+---
 
-## ✨ Features
+# ✨ Features
 
-- 🎬 **Video Analysis** - CNN-based detection of visual artifacts, compression anomalies, and color inconsistencies
-- 🎵 **Audio Analysis** - Spectral analysis using MFCC features to detect synthetic speech
-- 👤 **Face Landmarks** - 468-point facial mesh analysis for blink patterns, lip-sync, and micro-expressions
-- 📊 **Confidence Scoring** - Combined authenticity score with detailed breakdowns
-- 🎨 **Modern UI** - Premium dark theme with glassmorphism and smooth animations
-- 🔒 **Privacy First** - Files are deleted immediately after analysis
-- 🚀 **Fast Processing** - Optimized for quick results without sacrificing accuracy
+- 🎬 Video Deepfake Detection
+- 🎵 Audio Analysis
+- 👤 Face Landmark Detection
+- 📊 Authenticity Score
+- 🎨 Modern Responsive UI
+- 🔒 Privacy-focused Processing
+- 🚀 Fast Analysis
 
-## 🖥️ Demo
+---
 
-| Frontend (Vercel) | Backend API (Render) |
-|-------------------|----------------------|
-| [![Frontend](https://img.shields.io/badge/Live-App-black?style=for-the-badge&logo=vercel)](https://deepfake-detector.vercel.app/) | [![Backend](https://img.shields.io/badge/API-Server-green?style=for-the-badge&logo=render)](https://deepguard-api-d568.onrender.com) |
+# 🖥️ Demo
 
-> **Note:** The backend on Render may spin down after inactivity. Allow 50-60 seconds for the first request.
+| Frontend | Backend API |
+|----------|-------------|
+| https://deepfake-detector.vercel.app | https://deepguard-api-d568.onrender.com |
 
-## 🚀 Quick Start
+> **Note:** The backend hosted on Render may take 30–60 seconds to wake up after inactivity.
 
-### Prerequisites
+---
 
-- Python 3.10 or higher
-- pip (Python package manager)
-- FFmpeg (optional, for audio extraction from videos)
+# 🚀 Quick Start
 
-### Installation
+## Prerequisites
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/deepfake-detector.git
-   cd deepfake-detector
-   ```
+- Python 3.10+
+- pip
+- FFmpeg (Optional)
 
-2. **Set up Python virtual environment**
-   ```bash
-   cd backend
-   python -m venv venv
-   
-   # Windows
-   .\venv\Scripts\activate
-   
-   # macOS/Linux
-   source venv/bin/activate
-   ```
+## Installation
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Clone Repository
 
-4. **Run the backend server**
-   ```bash
-   python app.py
-   ```
-   The API will be available at `http://localhost:8000`
+```bash
+git clone https://github.com/gopika1610/deepfake-detector.git
+cd deepfake-detector
+```
 
-5. **Open the frontend**
-   
-   Open `frontend/index.html` in your web browser, or serve it with a local server:
-   ```bash
-   cd ../frontend
-   python -m http.server 3000
-   ```
-   Then visit `http://localhost:3000`
+### Backend Setup
 
-## 📁 Project Structure
+```bash
+cd backend
+
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python app.py
+```
+
+Backend runs at:
+
+```
+http://localhost:8000
+```
+
+### Frontend
+
+```bash
+cd frontend
+
+python -m http.server 3000
+```
+
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+# 📁 Project Structure
 
 ```
 deepfake-detector/
+│
 ├── backend/
-│   ├── app.py                    # FastAPI main application
-│   ├── requirements.txt          # Python dependencies
+│   ├── app.py
+│   ├── requirements.txt
 │   ├── models/
-│   │   ├── video_detector.py     # CNN video analysis
-│   │   ├── audio_detector.py     # Spectral audio analysis
-│   │   └── face_analyzer.py      # Face landmark detection
 │   └── utils/
-│       ├── preprocessing.py      # Media preprocessing
-│       └── helpers.py            # Utility functions
 │
 ├── frontend/
-│   ├── index.html               # Main HTML
+│   ├── index.html
 │   ├── css/
-│   │   └── styles.css           # Premium styling
 │   └── js/
-│       └── app.js               # Frontend logic
 │
 ├── README.md
-├── .gitignore
-└── LICENSE
+├── LICENSE
+└── .gitignore
 ```
 
-## 🔌 API Endpoints
+---
+
+# 🔌 API Endpoints
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `/` | GET | API information |
-| `/api/health` | GET | Health check |
-| `/api/analyze/video` | POST | Analyze video for deepfakes |
-| `/api/analyze/audio` | POST | Analyze audio for deepfakes |
-| `/api/analyze/full` | POST | Complete multi-modal analysis |
-| `/api/tips` | GET | Get protection tips |
+| / | GET | API Information |
+| /api/health | GET | Health Check |
+| /api/analyze/video | POST | Video Analysis |
+| /api/analyze/audio | POST | Audio Analysis |
+| /api/analyze/full | POST | Multi-modal Analysis |
+| /api/tips | GET | Security Tips |
 
-### Example API Usage
+---
 
-```python
-import requests
+# 🔬 Technologies Used
 
-# Analyze a video
-with open('video.mp4', 'rb') as f:
-    response = requests.post(
-        'http://localhost:8000/api/analyze/full',
-        files={'file': f}
-    )
-    result = response.json()
-    print(f"Authenticity Score: {result['overall_result']['authenticity_score']}%")
-```
+## Backend
+- Python
+- FastAPI
+- TensorFlow
+- OpenCV
 
-## 🔬 Detection Methods
+## AI & Media Processing
+- MediaPipe Face Mesh
+- Librosa
+- MFCC Features
 
-### Video Analysis (CNN)
-- **Compression Artifacts**: Detects DCT block boundaries and JPEG artifacts
-- **Color Consistency**: Analyzes LAB color space for blending anomalies
-- **Noise Patterns**: Identifies unnatural noise characteristics in facial regions
-- **Temporal Coherence**: Checks frame-to-frame consistency
+## Frontend
+- HTML
+- CSS
+- JavaScript
 
-### Audio Analysis (Spectral)
-- **MFCC Features**: 20 Mel-frequency cepstral coefficients
-- **Spectral Analysis**: Centroid, bandwidth, and rolloff detection
-- **Voice Quality**: Jitter and shimmer measurements
-- **Temporal Patterns**: Rhythm and pause analysis
+---
 
-### Face Landmark Analysis
-- **468 Facial Points**: MediaPipe Face Mesh tracking
-- **Blink Patterns**: Eye aspect ratio and blink frequency
-- **Lip Sync**: Mouth movement correlation
-- **Micro-expressions**: Facial movement dynamics
+# 🎨 UI Features
 
-## 🎨 UI Features
+- Responsive Design
+- Drag & Drop Upload
+- Dark Theme
+- Glassmorphism Interface
+- Progress Indicators
 
-- **Glassmorphism Design**: Modern frosted glass effect
-- **Dark Theme**: Easy on the eyes with vibrant accents
-- **Smooth Animations**: Engaging micro-interactions
-- **Responsive**: Works on desktop and mobile
-- **Drag & Drop**: Easy file upload experience
-- **Real-time Progress**: Visual feedback during analysis
+---
 
-## 🛡️ Privacy & Security
+# 🔒 Privacy & Security
 
-- **No Storage**: Files are deleted immediately after analysis
-- **No Logging**: We don't log any analyzed content
-- **Local Processing**: All analysis happens on your server
-- **CORS Enabled**: Configurable cross-origin settings
+- Temporary file processing
+- No permanent media storage
+- Local server execution
+- Configurable CORS support
 
-## 🚀 Deployment
+---
 
-### Docker
+# 🚀 Deployment
 
-```bash
-docker build -t deepguard .
-docker run -p 8000:8000 deepguard
-```
+### Frontend
+- Vercel
 
-### Render / Railway
+### Backend
+- Render
 
-1. Connect your GitHub repository
-2. Set the build command: `pip install -r backend/requirements.txt`
-3. Set the start command: `cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT`
+---
 
-## 🤝 Contributing
+# 📚 Learning Outcome
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Through this project, I gained practical experience in:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- FastAPI
+- REST API Development
+- Frontend & Backend Integration
+- Deployment using Vercel and Render
+- Testing and Debugging
+- Team Collaboration
+- Git & GitHub
 
-## 📝 License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+# ⚠️ Disclaimer
 
-## ⚠️ Disclaimer
+This repository showcases a Final Year academic team project. The project is intended for educational and learning purposes. Detection results should not be considered definitive and should be verified using multiple methods.
 
-This tool is designed for educational and research purposes. While it uses advanced techniques to detect potential deepfakes, no detection system is 100% accurate. Always verify content through multiple sources and use critical thinking when evaluating media authenticity.
+---
 
-## 🙏 Acknowledgments
+# 🙏 Acknowledgements
 
-- [MediaPipe](https://mediapipe.dev/) for face mesh detection
-- [librosa](https://librosa.org/) for audio analysis
-- [OpenCV](https://opencv.org/) for video processing
-- [FastAPI](https://fastapi.tiangolo.com/) for the backend framework
+Special thanks to the open-source communities behind:
+
+- MediaPipe
+- OpenCV
+- TensorFlow
+- Librosa
+- FastAPI
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
 
 ---
 
 <p align="center">
-  Made with ❤️ to protect truth in the digital age
+Made with ❤️ as a Final Year B.Tech Team Project
 </p>
